@@ -55,28 +55,22 @@ export default function ContactSidebar() {
 
                 {/* Barra de búsqueda */}
                 <div className="search--bar">
-                    <div className="search--icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                        <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-                    </svg></div>
+                    <div className="search--icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                        </svg>
+                    </div>
                     <input
                         type="text"
                         placeholder="Buscar un chat o iniciar uno nuevo"
-                        className="search-input"
+                        className="search--input"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                     {searchQuery && (
                         <button
                             onClick={() => setSearchQuery('')}
-                            style={{
-                                background: 'none',
-                                border: 'none',
-                                cursor: 'pointer',
-                                color: '#8696a0',
-                                fontSize: '16px',
-                                padding: '0 4px',
-                                lineHeight: 1,
-                            }}
+                            className="search--clear__btn"
                             title="Limpiar búsqueda"
                         >
                             ✕
@@ -167,7 +161,7 @@ export default function ContactSidebar() {
                             style={{ backgroundImage: `url(${profileContact.profile_picture})` }}
                         >
                             <div className="profile--banner__blur" />
-                            <button className="profile-close-btn" onClick={closeProfile}>✕</button>
+                            <button className="profile--close__btn" onClick={closeProfile}>✕</button>
                         </div>
 
                         <div className="profile--avatar__section">
@@ -182,8 +176,8 @@ export default function ContactSidebar() {
                                 />
                             </div>
                             {profileContact.online
-                                ? <span className="profile--status__pill online">🟢 En línea</span>
-                                : <span className="profile--status__pill offline">⚫ {profileContact.last_time_connection || 'Desconectado'}</span>
+                                ? <span className="profile--status__pill online"> En línea</span>
+                                : <span className="profile--status__pill offline"> {profileContact.last_time_connection || 'Desconectado'}</span>
                             }
                         </div>
 
@@ -212,15 +206,15 @@ export default function ContactSidebar() {
                                 )}
                             </div>
 
-                            <div className="profile-section">
-                                <p className="profile-section-title">Estado</p>
-                                <div className="profile-field">
-                                    <div className="profile-field-icon-wrap">💬</div>
-                                    <div className="profile-field-body">
-                                        <p className="profile-field-value">
+                            <div className="profile--section">
+                                <p className="profile--section__title">Estado</p>
+                                <div className="profile--field">
+                                    <div className="profile--field__icon--wrap">💬</div>
+                                    <div className="profile--field__body">
+                                        <p className="profile--field__value">
                                             {profileContact.status || 'Disponible'}
                                         </p>
-                                        <p className="profile-field-label">Mensaje de estado</p>
+                                        <p className="profile--field__label">Mensaje de estado</p>
                                     </div>
                                 </div>
                             </div>
@@ -237,7 +231,7 @@ export default function ContactSidebar() {
                                 </div>
                             </div>
 
-                            <div className="profile--actions">
+                            <div className="profile--action">
                                 <Link
                                     to={`/home/chat/${profileContact.id}`}
                                     className="profile--action__btn primary"
