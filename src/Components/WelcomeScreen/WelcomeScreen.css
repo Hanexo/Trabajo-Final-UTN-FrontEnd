@@ -1,0 +1,99 @@
+.ws--root {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f2f5;
+    gap: 20px;
+    padding: 32px 24px;
+}
+
+/* ── Tarjeta ── */
+.ws--card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px 28px;
+    max-width: 340px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.ws--illustration {
+    margin-bottom: 4px;
+}
+
+.ws--card__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111b21;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.4;
+}
+
+.ws--card__desc {
+    font-size: 13.5px;
+    color: #667781;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.ws--download__btn {
+    background: #d9fdd3;
+    color: #0a6a45;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 4px;
+}
+
+.ws--download__btn:hover {
+    background: #c3f5bb;
+}
+
+/* ── Botones de acción ── */
+.ws--actions {
+    display: flex;
+    gap: 14px;
+    max-width: 340px;
+    width: 100%;
+}
+
+.ws--action__btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 12px;
+    background: #ffffff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #111b21;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: background 0.15s;
+}
+
+.ws--action__btn:hover {
+    background: #f5f6f6;
+}
+
+.ws--action__icon {
+    font-size: 26px;
+    color: #54656f;
+}

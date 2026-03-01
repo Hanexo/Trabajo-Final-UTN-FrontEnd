@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+:root {
+    --color--primario-950: #111B21;
+    --color--primario-900: #00634D;
+    --color--primario-900: #1DAA61;
+    --color--primario-850: #25D366;
+    --color--primario-800: #027EB5;
+    --color--primario-200: #D9FDD3;
+
+
+    --color--primario-700: #652BDF;
+    --color--secundario--200: #E4D7FF;
+}

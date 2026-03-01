@@ -1,0 +1,117 @@
+.nav--sidebar {
+    width: 62px;
+    min-width: 62px;
+    height: 100vh;
+    background-color: #360C72;
+    border-right: 1px solid #19a9f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+/* Grupos top/bottom */
+.nav--top,
+.nav--bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Botón base */
+.nav--btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #54656f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: background 0.15s, color 0.15s;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.nav--btn:hover {
+    background: #e9edef;
+    color: #111b21;
+}
+
+/* Activo */
+.nav--btn__active {
+    color: #111b21;
+}
+
+.nav--icon__wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav--badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #25d366;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    box-sizing: border-box;
+    border: 2px solid #f0f2f5;
+}
+
+.nav--online__dot {
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    width: 9px;
+    height: 9px;
+    background: #25d366;
+    border-radius: 50%;
+    border: 2px solid #f0f2f5;
+}
+
+/* Avatar */
+.nav--btn__avatar {
+    margin-top: 4px;
+}
+
+.nav--avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.nav--avatar__placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #128c7e;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+}

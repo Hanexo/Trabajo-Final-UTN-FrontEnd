@@ -1,0 +1,176 @@
+import { useContext, useState, useRef, useEffect } from 'react';
+import { useParams, Link } from 'react-router'; // Link es fundamental para navegar
+import { ContactsContext } from '../../ContactsContext/ContactsContext';
+import './ContactScreen.css';
+
+export default function ContactScreen() {
+    const { id } = useParams();
+    const { contacts, sendMessage } = useContext(ContactsContext);
+    const [inputValue, setInputValue] = useState("");
+    const messagesEndRef = useRef(null);
+    const inputRef = useRef(null);
+
+    const contactId = parseInt(id);
+    const contact = contacts.find(c => c.id === contactId);
+
+    // Filtrado de mensajes por contacto activo
+    const contactMessages = (() => {
+        if (!contact) return [];
+        const msgs = Array.isArray(contact.messages) ? contact.messages : [];
+        if (msgs.length > 0 && msgs[0].contact_id !== undefined) {
+            return msgs.filter(m => m.contact_id === contactId);
+        }
+        return msgs;
+    })();
+
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [contactMessages.length]);
+
+    useEffect(() => {
+        setInputValue("");
+        // Aquí borramos la línea que decía setShowProfile(false) porque ya no existe ese estado
+    }, [id]);
+
+    const handleSend = (e) => {
+        if (e.key === 'Enter' && inputValue.trim() !== "") {
+            sendMessage(contactId, inputValue);
+            setInputValue("");
+        }
+    };
+
+    const handleSendClick = () => {
+        if (inputValue.trim() !== "") {
+            sendMessage(contactId, inputValue);
+            setInputValue("");
+            inputRef.current?.focus();
+        }
+    };
+
+    if (!contact) return (
+        <div className="cs-nochat">
+            <div className="cs-nochat-box">
+                <div className="cs-nochat-icon">💬</div>
+                <h2>Tus mensajes personales son seguros</h2>
+                <p>Selecciona un contacto para comenzar.</p>
+                <div className="cs-nochat-lock">🔒 Cifrado de extremo a extremo</div>
+            </div>
+        </div>
+    );
+
+    const grouped = contactMessages.map((msg, i, arr) => ({
+        ...msg,
+        isFirst: i === 0 || arr[i - 1].send_by_me !== msg.send_by_me,
+        isLast: i === arr.length - 1 || arr[i + 1].send_by_me !== msg.send_by_me,
+    }));
+
+    return (
+        <div className="cs-root">
+            {/* ════════ HEADER (Actualizado con Link) ════════ */}
+            <header className="cs-header">
+                {/* Envolvemos la identidad en un Link hacia la nueva página de perfil */}
+                <Link
+                    to={`/home/profile/${contact.id}`}
+                    className="cs-header-identity"
+                    style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                >
+                    <div className="cs-hdr-avatar-wrap">
+                        <img
+                            src={contact.profile_picture}
+                            alt={contact.name}
+                            className="cs-hdr-avatar"
+                            onError={e => {
+                                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(contact.name)}&background=128c7e&color=fff&size=42`;
+                            }}
+                        />
+                        {contact.online && <span className="cs-hdr-dot" />}
+                    </div>
+                    <div>
+                        <p className="cs-hdr-name">{contact.name}</p>
+                        <p className={`cs-hdr-status ${contact.online ? 'cs-hdr-status--on' : ''}`}>
+                            {contact.online ? 'en línea' : (contact.last_time_connection || 'última vez recientemente')}
+                        </p>
+                    </div>
+                </Link>
+
+                <div className="cs-header-actions">
+                    {/* Botón Llamar con ícono de video y flecha */}
+                    <button className="cs-hdr-call-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
+                            <path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z" />
+                        </svg>
+                        Llamar
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
+                            <path d="M7 10l5 5 5-5z" />
+                        </svg>
+                    </button>
+
+                    {/* Lupa */}
+                    <button className="cs-hdr-icon-btn" title="Buscar">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
+                            <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                        </svg>
+                    </button>
+
+                    {/* Tres puntos */}
+                    <button className="cs-hdr-icon-btn" title="Más opciones">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
+                            <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            {/* ════════ MENSAJES ════════ */}
+            <div className="cs-messages">
+                <div className="cs-date-chip"><span>Hoy</span></div>
+
+                {grouped.map((msg, index) => (
+                    <div
+                        key={`${contactId}-${msg.id ?? index}`}
+                        className={`cs-row ${msg.send_by_me ? 'cs-row--me' : 'cs-row--them'}`}
+                    >
+                        <div className={[
+                            'cs-bubble',
+                            msg.send_by_me ? 'cs-bubble--me' : 'cs-bubble--them',
+                            msg.isFirst && msg.send_by_me ? 'cs-bubble--tail-me' : '',
+                            msg.isFirst && !msg.send_by_me ? 'cs-bubble--tail-them' : '',
+                        ].filter(Boolean).join(' ')}>
+                            <p className="cs-bubble-text">{msg.text}</p>
+                            <span className="cs-bubble-foot">
+                                <span className="cs-time">
+                                    {new Date(msg.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                </span>
+                                {msg.send_by_me && <span className="cs-ticks">✓✓</span>}
+                            </span>
+                        </div>
+                    </div>
+                ))}
+                <div ref={messagesEndRef} />
+            </div>
+
+            {/* ════════ INPUT ════════ */}
+            <footer className="cs-footer">
+                <div className="cs-input-wrap">
+                    <textarea
+                        ref={inputRef}
+                        className="cs-input"
+                        placeholder="Escribe un mensaje aquí"
+                        value={inputValue}
+                        onChange={e => setInputValue(e.target.value)}
+                        onKeyDown={handleSend}
+                        rows={1}
+                    />
+                </div>
+                <button
+                    className={`cs-send-btn ${inputValue.trim() ? 'cs-send-btn--on' : ''}`}
+                    onClick={handleSendClick}
+                >
+                    {inputValue.trim() ? "➤" : "🎤"}
+                </button>
+            </footer>
+
+            {/* AQUÍ YA NO ESTÁ EL CÓDIGO DEL MODAL QUE CAUSABA ERROR */}
+        </div>
+    );
+}
