@@ -5,7 +5,7 @@
     justify-content: space-between;
     width: 100vw;
     height: 100vh;
-    background-color: #f0f2f5;
+    background-color: var(--color--primario-200);
     padding: 60px 24px;
     box-sizing: border-box;
 }
@@ -38,7 +38,7 @@
 .loading-title {
     font-size: 28px;
     font-weight: 300;
-    color: #41525d;
+    color: var(--color--secundario-300);
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     animation: fadeUp 0.5s ease 0.3s both;
@@ -47,7 +47,7 @@
 .loading--progress__wrap {
     width: 140px;
     height: 3px;
-    background: #d1d7db;
+    background: var(--color--primario-300);
     border-radius: 3px;
     overflow: hidden;
     margin-top: 8px;
@@ -57,7 +57,7 @@
 .loading--progress__bar {
     height: 100%;
     width: 0%;
-    background: #25d366;
+    background: var(--color--primario-650);
     border-radius: 3px;
     animation: loadBar 2.2s ease 0.5s forwards;
 }

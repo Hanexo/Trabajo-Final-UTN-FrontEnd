@@ -2,8 +2,8 @@
     width: 62px;
     min-width: 62px;
     height: 100vh;
-    background-color: #360C72;
-    border-right: 1px solid #19a9f1;
+    background-color: var(--color--primario-200);
+    border-right: 1px solid #DEDCDA;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,12 +43,12 @@
 
 .nav--btn:hover {
     background: #e9edef;
-    color: #111b21;
+    color: var(--color--primario-900);
 }
 
 /* Activo */
 .nav--btn__active {
-    color: #111b21;
+    color: var(--color--primario-900);
 }
 
 .nav--icon__wrap {
@@ -62,8 +62,8 @@
     position: absolute;
     top: -8px;
     right: -10px;
-    background: #25d366;
-    color: #fff;
+    background: var(--color--primario-500);
+    color: var(--color--primario-100);
     font-size: 10px;
     font-weight: 700;
     min-width: 18px;
@@ -83,7 +83,7 @@
     right: -3px;
     width: 9px;
     height: 9px;
-    background: #25d366;
+    background: var(--color--primario-500);
     border-radius: 50%;
     border: 2px solid #f0f2f5;
 }
@@ -105,8 +105,8 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: #128c7e;
-    color: #fff;
+    background: var(--color--primario-650);
+    color: var(--color--primario-100);
     font-size: 15px;
     font-weight: 700;
     display: flex;

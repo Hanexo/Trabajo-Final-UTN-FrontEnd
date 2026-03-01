@@ -15,14 +15,28 @@ body,
 
 
 :root {
-    --color--primario-950: #111B21;
-    --color--primario-900: #00634D;
-    --color--primario-900: #1DAA61;
-    --color--primario-850: #25D366;
-    --color--primario-800: #027EB5;
-    --color--primario-200: #D9FDD3;
+    --color--primario-900: #111B21;
+    --color--primario-800: #00634D;
+    --color--primario-650: #1DAA61;
+    --color--primario-500: #25D366;
+    --color--primario-400: #027EB5;
+    --color--primario-300: #D9FDD3;
+    --color--primario-200: #F6F5F4;
+    --color--primario-100: #FFFFFF;
 
 
-    --color--primario-700: #652BDF;
-    --color--secundario--200: #E4D7FF;
+    --color--secundario-300: #8696a0;
+    --color--secundario-200: #626262;
+
+    /* Color (Filter Tab */
+
+    --color--Filter--tab: #666B7A;
+
+    /* Color Hover */
+
+    --color--hover-100: #8696a0;
+
+
+
+
 }

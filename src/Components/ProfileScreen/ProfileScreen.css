@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #f0f2f5;
+    background-color: var(--color--primario-200);
     animation: fadeIn 0.3s ease;
 }
 
 .profile--header {
-    background-color: #00634d;
-    color: white;
+    background-color: var(--color--primario-800);
+    color: var(--color--primario-100);
     padding: 16px 20px;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@
 }
 
 .profile--main__card {
-    background: white;
+    background: var(--color--primario-100);
     width: 100%;
     max-width: 450px;
     padding: 30px;
@@ -53,12 +53,12 @@
 }
 
 .profile--phone {
-    color: #667781;
+    color: var(--color--secundario-200);
     font-size: 18px;
 }
 
 .profile--info__section {
-    background: white;
+    background: var(--color--primario-100);
     width: 100%;
     max-width: 450px;
     padding: 20px;
@@ -68,7 +68,7 @@
 }
 
 .section--label {
-    color: #008069;
+    color: var(--color--primario-800);
     font-size: 14px;
     font-weight: 600;
     display: block;
