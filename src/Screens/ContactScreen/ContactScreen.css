@@ -6,11 +6,9 @@
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    /* pantalla completa */
     overflow: hidden;
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: #efeae2;
-    /* textura sutil idéntica a WhatsApp */
+    background: var(--color--primario-200);
     background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a09880' fill-opacity='0.07'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -22,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f0f2f5;
+    background: var(--color--primario-200);
     height: 100vh;
 }
 
@@ -41,20 +39,20 @@
 .cs--nochat__box h2 {
     font-size: 22px;
     font-weight: 300;
-    color: #41525d;
+    color: var(--color--secundario-200);
     margin: 0 0 10px;
 }
 
 .cs--nochat__box p {
     font-size: 14px;
-    color: #8696a0;
+    color: var(--color--secundario-200);
     line-height: 1.6;
     margin: 0 0 18px;
 }
 
 .cs--nochat__lock {
     font-size: 13px;
-    color: #8696a0;
+    color: var(--color--secundario-200);
     border-top: 1px solid #d1d7db;
     padding-top: 14px;
 }
@@ -66,7 +64,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #FFFFFF;
+    background: var(--color--primario-100);
     padding: 0 16px;
     height: 60px;
     min-height: 60px;
@@ -108,15 +106,15 @@
     right: 1px;
     width: 11px;
     height: 11px;
-    background: #25d366;
+    background: var(--color--primario-500);
     border-radius: 50%;
-    border: 2px solid #f0f2f5;
+    border: 2px solid var(--color--primario-200);
 }
 
 .cs--hdr__name {
     font-size: 16px;
     font-weight: 490;
-    color: #111b21;
+    color: var(--color--primario-900);
     margin: 0 0 2px;
     white-space: nowrap;
     overflow: hidden;
@@ -125,12 +123,12 @@
 
 .cs--hdr__status {
     font-size: 13px;
-    color: #828282;
+    color: var(--color--secundario-200);
     margin: 0;
 }
 
 .cs--hdr__status--on {
-    color: #828282;
+    color: var(--color--secundario-200);
     font-weight: 450;
 }
 
@@ -167,7 +165,7 @@
     border-radius: 50%;
     border: none;
     background: transparent;
-    color: #111B21;
+    color: var(--color--primario-900);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -201,7 +199,6 @@
     border-radius: 3px;
 }
 
-/* chip "Hoy" */
 .cs--date__chip {
     display: flex;
     justify-content: center;
@@ -209,8 +206,8 @@
 }
 
 .cs--date__chip span {
-    background: #fff;
-    color: #54656f;
+    background: var(--color--primario-100);
+    color: var(--color--secundario-300);
     font-size: 12.5px;
     font-weight: 500;
     padding: 4px 14px;
@@ -219,9 +216,8 @@
     letter-spacing: 0.3px;
 }
 
-/* ═══════════════════
-   FILA DE MENSAJE
-   ═══════════════════ */
+/* Fila de mensaje */
+
 .cs--row {
     display: flex;
     margin-bottom: 1px;
@@ -248,9 +244,8 @@
     justify-content: flex-start;
 }
 
-/* ═══════════════════
-   BURBUJA
-   ═══════════════════ */
+/* Burbuja */
+
 .cs--bubble {
     position: relative;
     max-width: 60%;
@@ -262,12 +257,12 @@
 }
 
 .cs--bubble__me {
-    background: #d9fdd3;
+    background: var(--color--primario-300);
     border-radius: 7.5px 0 7.5px 7.5px;
 }
 
 .cs--bubble__them {
-    background: #ffffff;
+    background: var(--color--primario-100);
     border-radius: 0 7.5px 7.5px 7.5px;
 }
 
@@ -279,7 +274,7 @@
     right: -8px;
     width: 0;
     height: 0;
-    border-left: 8px solid #d9fdd3;
+    border-left: 8px solid var(--color--primario-300);
     border-bottom: 8px solid transparent;
 }
 
@@ -290,13 +285,13 @@
     left: -8px;
     width: 0;
     height: 0;
-    border-right: 8px solid #ffffff;
+    border-right: 8px solid var(--color--primario-100);
     border-bottom: 8px solid transparent;
 }
 
 .cs--bubble__text {
     font-size: 14.5px;
-    color: #000000;
+    color: var(--color--primario-900);
     line-height: 1.45;
     margin: 0;
     padding-right: 6px;
@@ -313,7 +308,7 @@
 
 .cs--time {
     font-size: 11px;
-    color: #8696a0;
+    color: var(--color--secundario-300);
     white-space: nowrap;
     line-height: 1;
 }
@@ -335,7 +330,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    background: #f0f2f5;
+    background: var(--color--primario-200);
     padding: 8px 16px;
     min-height: 62px;
     flex-shrink: 0;
@@ -363,7 +358,7 @@
 
 .cs--input__wrap {
     flex: 1;
-    background: #ffffff;
+    background: var(--color--primario-100);
     border-radius: 24px;
     display: flex;
     align-items: center;
@@ -378,7 +373,7 @@
     background: transparent;
     outline: none;
     font-size: 15px;
-    color: #111b21;
+    color: var(--color--primario-900);
     font-family: inherit;
     padding: 8px 0;
     resize: none;
@@ -401,31 +396,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #128c7e;
+    background: var(--color--primario-650);
     color: #fff;
     transition: background 0.2s, transform 0.15s;
 }
 
 .cs--send__btn:hover {
-    background: #0d7066;
+    background: var(--color--primario-800);
     transform: scale(1.06);
 }
 
 .cs--send__btn--on {
-    background: #25d366;
+    background: var(--color--primario-650);
 }
 
 .cs--send__btn--on:hover {
-    background: #1ebe5d;
+    background: var(--color--primario-500);
 }
 
-/* ═══════════════════
-   OVERLAY / PERFIL
-   ═══════════════════ */
+/* Perfil */
+
 .cs--overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: var(--color--primario-900);
     backdrop-filter: blur(5px);
     z-index: 9999;
     display: flex;
@@ -445,7 +439,7 @@
 }
 
 .cs--profile {
-    background: #fff;
+    background: var(--color--primario-100);
     border-radius: 20px;
     width: 370px;
     max-height: 88vh;
@@ -494,9 +488,9 @@
 .cs--profile__close {
     position: relative;
     z-index: 2;
-    background: rgba(0, 0, 0, .28);
+    background: var(--color--primario-900);
     border: none;
-    color: #fff;
+    color: var(--color--primario-100);
     font-size: 15px;
     width: 30px;
     height: 30px;
@@ -509,7 +503,7 @@
 }
 
 .cs--profile__close:hover {
-    background: rgba(0, 0, 0, .5);
+    background: var(--color--primario-900);
 }
 
 .cs--profile__avatar-row {
@@ -527,13 +521,13 @@
     height: 92px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #fff;
+    border: 4px solid var(--color--primario-100);
     box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
 }
 
 .cs--profile__online--pill {
-    background: #25d366;
-    color: #fff;
+    background: var(--color--primario-500);
+    color: var(--color--primario-100);
     font-size: 11px;
     font-weight: 700;
     padding: 3px 12px;
@@ -548,13 +542,13 @@
 .cs--profile__name {
     font-size: 21px;
     font-weight: 700;
-    color: #111b21;
+    color: var(--color--primario-900);
     margin: 4px 0 16px;
 }
 
 .cs--profile__section {
     text-align: left;
-    background: #f8f9fa;
+    background: var(--color--primario-200);
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid #e9edef;
@@ -564,7 +558,7 @@
 .cs--profile__stitle {
     font-size: 11.5px;
     font-weight: 700;
-    color: #128c7e;
+    color: var(--color--primario-650);
     text-transform: uppercase;
     letter-spacing: .5px;
     margin: 0;
@@ -582,7 +576,7 @@
 .cs--pf__icon {
     width: 34px;
     height: 34px;
-    background: #fff;
+    background: var(--color--primario-100);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -594,7 +588,7 @@
 
 .cs--pf__val {
     font-size: 15px;
-    color: #111b21;
+    color: var(--color--primario-900);
     font-weight: 500;
     margin: 0 0 2px;
     word-break: break-all;
@@ -602,7 +596,7 @@
 
 .cs--pf__lbl {
     font-size: 12px;
-    color: #8696a0;
+    color: var(--color--secundario-300);
     margin: 0;
 }
 
