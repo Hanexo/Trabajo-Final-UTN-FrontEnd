@@ -123,7 +123,6 @@ body,
         max-width: 100%;
     }
 
-    /* Con chat: ocultar sidebar, chat llena todo */
     .main--layout.chat--is-open .sidebar {
         display: none;
     }
@@ -142,6 +141,17 @@ body,
     .cs--header {
         padding: 0px;
     }
+
+    .profile--img__large {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile--title {
+        font-size: 20px;
+
+    }
+
 
 
 
@@ -167,5 +177,8 @@ body,
         font-size: 15px;
     }
 
+    .contact--card {
+        padding: 10px 10px;
+    }
 
 }

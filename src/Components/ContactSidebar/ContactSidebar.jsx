@@ -53,7 +53,6 @@ export default function ContactSidebar() {
                     </div>
                 </header>
 
-                {/* Barra de búsqueda */}
                 <div className="search--bar">
                     <div className="search--icon">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -78,7 +77,6 @@ export default function ContactSidebar() {
                     )}
                 </div>
 
-                {/* ── PESTAÑAS DE FILTRO ── */}
                 <div className="filter--tabs">
                     {FILTERS.map(filter => (
                         <button
@@ -151,7 +149,7 @@ export default function ContactSidebar() {
                 </div>
             </div>
 
-            {/* MODAL DE PERFIL */}
+            {/* Modal */}
             {profileContact && (
                 <div className="profile--overlay" onClick={closeProfile}>
                     <div className="profile--modal" onClick={(e) => e.stopPropagation()}>
@@ -237,10 +235,12 @@ export default function ContactSidebar() {
                                     className="profile--action__btn primary"
                                     onClick={closeProfile}
                                 >
-                                    <span>💬</span> Mensaje
+                                    <span><i class="bi bi-chat-dots-fill"></i>
+                                    </span> Mensaje
                                 </Link>
                                 <button className="profile--action__btn secondary">
-                                    <span>📞</span> Llamar
+                                    <span><i class="bi bi-telephone-inbound"></i>
+                                    </span> Llamar
                                 </button>
                                 <button className="profile--action__btn secondary">
                                     <span>🎥</span> Video
@@ -248,7 +248,7 @@ export default function ContactSidebar() {
                             </div>
 
                             <button className="profile--block__btn">
-                                🚫 Bloquear a {profileContact.name}
+                                <i class="bi bi-ban"></i> Bloquear a {profileContact.name}
                             </button>
                         </div>
                     </div>

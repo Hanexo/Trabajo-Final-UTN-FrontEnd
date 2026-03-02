@@ -19,7 +19,7 @@ export default function ProfileScreen() {
                 <button className="back--btn" onClick={() => navigate(-1)}>
                     <i className="bi bi-arrow-left"></i>
                 </button>
-                <h2>Info. del contacto</h2>
+                <h2 className='profile--title'>Info. del contacto</h2>
             </header>
 
             <div className="profile--body">

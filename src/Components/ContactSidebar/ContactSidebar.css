@@ -146,9 +146,8 @@
     font-weight: 600;
 }
 
-/* ===========================
-   LISTA DE CONTACTOS
-   =========================== */
+/* Lista de contactos */
+
 .contact--list {
     flex: 1;
     overflow-y: auto;
@@ -218,9 +217,7 @@
     border: 2px solid var(--color--primario-100)
 }
 
-/* ===========================
-   DETALLES DEL CONTACTO
-   =========================== */
+/* Detalles de contacto */
 .contact--details {
     flex: 1;
     display: flex;
@@ -278,9 +275,8 @@
     margin-left: 6px;
 }
 
-/* ===========================
-   MODAL DE PERFIL (OVERLAY)
-   =========================== */
+/* Overlay */
+
 .profile--overlay {
     position: fixed;
     inset: 0;
@@ -413,9 +409,6 @@
     color: var(--color--secundario-300);
 }
 
-/* ===========================
-   INFORMACIÓN Y ACCIONES MODAL
-   =========================== */
 .profile--info {
     padding: 8px 20px 20px;
     text-align: center;
@@ -526,9 +519,6 @@
     flex: 2;
 }
 
-.profile--action__btn.primary:hover {
-    background: var(--color--primario-650)
-}
 
 .profile--action__btn.secondary {
     background: var(--color--primario-200);

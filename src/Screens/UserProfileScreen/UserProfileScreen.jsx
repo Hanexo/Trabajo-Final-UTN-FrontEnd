@@ -9,7 +9,6 @@ export default function UserProfileScreen() {
     return (
         <div className="ups--layout">
 
-            {/* ── PANEL IZQUIERDO ── */}
             <div className="ups--panel">
 
                 <div className="ups--panel__header">
@@ -21,7 +20,7 @@ export default function UserProfileScreen() {
                     <h2 className="ups--panel__title">Perfil</h2>
                 </div>
 
-                {/* Foto de perfil */}
+
                 <div className="ups--avatar__section">
                     <div className="ups--avatar__wrap">
                         <div className="ups--avatar__placeholder">
@@ -33,7 +32,7 @@ export default function UserProfileScreen() {
                     </div>
                 </div>
 
-                {/* Nombre */}
+
                 <div className="ups--field">
                     <span className="ups--field__label">Nombre</span>
                     <div className="ups--field__row">
@@ -44,7 +43,7 @@ export default function UserProfileScreen() {
                     </div>
                 </div>
 
-                {/* Info */}
+
                 <div className="ups--field">
                     <span className="ups--field__label">Info.</span>
                     <div className="ups--field__row">
@@ -52,7 +51,7 @@ export default function UserProfileScreen() {
                     </div>
                 </div>
 
-                {/* Teléfono */}
+
                 <div className="ups--field">
                     <span className="ups--field__label">Teléfono</span>
                     <div className="ups--field__row">
@@ -66,7 +65,7 @@ export default function UserProfileScreen() {
 
             </div>
 
-            {/* ── PANEL DERECHO (placeholder) ── */}
+
             <div className="ups--right">
                 <div className="ups--right__placeholder">
                     <svg viewBox="0 0 24 24" width="80" height="80" fill="none">
