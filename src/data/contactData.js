@@ -6,7 +6,7 @@ export const contacts = [
         description: 'El Matador 🥊 | Campeón de Peso Pluma de la UFC. "La victoria es para los que creen".',
         last_time_connection: '12:30 a.m.',
         last_message: 'Bien yo estoy',
-        profile_picture: "/public/IliaTopuriaProfile.jpg",
+        profile_picture: "/IliaTopuriaProfile.jpg",
         online: true,
         unread: 1,
         messages: [
@@ -29,7 +29,7 @@ export const contacts = [
         description: 'Libra por Libra #1 🦅 Equipo Daguestán. En la cima del mundo.',
         last_time_connection: 'Ayer',
         last_message: 'Sí, nos vemos en el gimnasio',
-        profile_picture: "/public/IslamMakhachev--Profile.jpg",
+        profile_picture: "/IslamMakhachev--Profile.jpg",
         online: true,
         unread: 0,
         messages: [
@@ -50,7 +50,7 @@ export const contacts = [
         description: 'The Eagle 🦅 | 29-0 | Alhamdullilah para todo. Entrena duro o vete a casa.',
         last_time_connection: 'Ayer',
         last_message: 'Mándame la ubicación',
-        profile_picture: "/public/KhabibNurmagomedov--Profile.jpg",
+        profile_picture: "/KhabibNurmagomedov--Profile.jpg",
         online: false,
         unread: 0,
         messages: [
@@ -71,7 +71,7 @@ export const contacts = [
         description: 'El Diamante 💎 | Luisiana | "Todo tiene un precio". No hay retiro sin pelea.',
         last_time_connection: 'Domingo',
         last_message: 'Te mandé una botella de mi salsa picante',
-        profile_picture: "/public/DustinPoirier--Profile.jpg",
+        profile_picture: "/DustinPoirier--Profile.jpg",
         online: true,
         unread: 1,
         messages: [
@@ -92,7 +92,7 @@ export const contacts = [
         description: 'El iluminado por Dios 🙏 | Do Bronx. La favela venció otra vez.',
         last_time_connection: 'Sábado',
         last_message: 'El campeón tiene nombre',
-        profile_picture: "/public/CharlesOliveira--Profile.jpg",
+        profile_picture: "/CharlesOliveira--Profile.jpg",
         online: false,
         unread: 0,
         messages: [
@@ -112,7 +112,7 @@ export const contacts = [
         description: 'The Notorious 🇮🇪 | Doble Campeón. El Rey ha vuelto.',
         last_time_connection: 'Sábado',
         last_message: 'Eso es mentalidad 🔥',
-        profile_picture: "/public/ConorMcGregor--Profile.jpg",
+        profile_picture: "/ConorMcGregor--Profile.jpg",
         online: false,
         unread: 0,
         messages: [
@@ -133,7 +133,7 @@ export const contacts = [
         description: 'American Psychopath 🇺🇸 | Hablo con la verdad. La vida es una pelea.',
         last_time_connection: 'Viernes',
         last_message: 'La vida es pelea, hay que seguir',
-        profile_picture: "/public/SeanStrickland--Profile.png",
+        profile_picture: "/SeanStrickland--Profile.png",
         online: false,
         unread: 2,
         messages: [
@@ -154,7 +154,7 @@ export const contacts = [
         description: 'Blessed 🌴 | Campeón BMF. "Soy el mejor boxeador de la UFC".',
         last_time_connection: 'Viernes',
         last_message: 'Vamos por el cinturón',
-        profile_picture: "/public/MaxHolloway--Profile.png",
+        profile_picture: "/MaxHolloway--Profile.png",
         online: true,
         unread: 0,
         messages: [
