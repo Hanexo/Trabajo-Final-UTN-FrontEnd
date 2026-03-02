@@ -45,7 +45,7 @@ export const contacts = [
     },
     {
         id: 3,
-        name: 'Khabib Nurmagomedov',
+        name: 'Khabib',
         number: '+7 900 555 00 11',
         description: 'The Eagle 🦅 | 29-0 | Alhamdullilah para todo. Entrena duro o vete a casa.',
         last_time_connection: 'Ayer',

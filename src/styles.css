@@ -28,6 +28,33 @@ body,
     --color--Filter--tab: #666B7A;
 }
 
+@media screen {
+    .cs--hdr__call--btn {
+        padding: 6px 11px;
+        font-size: 13px;
+        gap: 5px;
+        border-radius: 14px;
+    }
+
+    .cs--hdr__icon--btn {
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .cs--hdr__icon--btn svg,
+    .cs--hdr__call--btn svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .cs--header__actions {
+        gap: 2px;
+    }
+
+}
+
+
 @media screen and (max-width: 1000px) {
     .filter--tabs {
         gap: 8px;
@@ -41,7 +68,16 @@ body,
     }
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 950px) {
+
+
+    .sidebar {
+        flex: 1;
+        width: 340px;
+        max-width: 340px;
+        height: 100%;
+    }
+
     .wa--topbar__welcome {
         display: none;
     }
@@ -71,12 +107,6 @@ body,
         height: 33px;
     }
 
-    .sidebar--container {
-        max-width: 300px;
-    }
-}
-
-@media screen and (max-width: 800px) {
     .cs--hdr__call--btn {
         padding: 5px 10px;
         font-size: 12px;
@@ -92,21 +122,29 @@ body,
 
     .cs--hdr__icon--btn svg,
     .cs--hdr__call--btn svg {
-        width: 16px !important;
-        height: 16px !important;
+        width: 16px;
+        height: 16px;
     }
 
     .cs--header__actions {
         gap: 2px;
     }
 
+}
+
+@media screen and (max-width: 860px) {
+
     .profile--img__large {
         width: 250px;
         height: 250px;
     }
+
+    .cs--hdr__call--btn {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 735px) {
 
     .main--layout:not(.chat--is-open) .chat--view {
         display: none;
@@ -124,6 +162,25 @@ body,
     }
 
     .main--layout.chat--is-open .sidebar {
+        display: none;
+    }
+
+    .cs--hdr__back--btn {
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 670px) {
+
+
+    .cs--hdr__call--btn {
+        padding: 7px 10px;
+        font-size: 0;
+        gap: 0;
+    }
+
+    .cs--hdr__call--btn svg:last-child {
         display: none;
     }
 }
@@ -152,11 +209,52 @@ body,
 
     }
 
+    .cs--messages {
+        padding: 10px;
+
+    }
+
+    .cs--bubble {
+        padding: 6px 10px 4px;
+
+        max-width: 85%;
+
+        margin-bottom: 8px;
+
+    }
+
+    .cs--bubble__text {
+        font-size: 14px;
+
+        line-height: 18px;
+
+    }
 
 
+    .cs--bubble__foot {
+        gap: 2px;
+    }
 
+    .cs--time {
+        font-size: 10px;
 
+    }
+
+    .cs--ticks {
+        font-size: 13px;
+    }
+
+    .cs--footer {
+        padding: 8px;
+    }
+
+    .cs--input {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 }
+
+
 
 @media screen and (max-width: 410px) {
     .cs--hdr__call--btn {
@@ -180,5 +278,6 @@ body,
     .contact--card {
         padding: 10px 10px;
     }
+
 
 }
