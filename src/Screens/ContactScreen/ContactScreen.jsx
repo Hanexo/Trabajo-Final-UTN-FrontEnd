@@ -68,7 +68,7 @@ export default function ContactScreen() {
         <div className="cs--root">
 
             <header className="cs--header">
-                {/* Botón Back — solo visible en móvil (≤670px) */}
+
                 <button
                     className="cs--hdr__back--btn"
                     onClick={() => navigate('/home')}

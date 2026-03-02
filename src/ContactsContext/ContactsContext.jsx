@@ -7,15 +7,14 @@ export const ContactsContext = createContext({
 
 const ContactsContextProvider = ({ children }) => {
 
-    // Al cargar, normalizamos los datos para garantizar que cada contacto
-    // tenga SOLO sus propios mensajes (por si el servicio los mezcla)
+
     const normalizeContacts = () => {
         const raw = getContacts();
 
         return raw.map(contact => {
             let messages = Array.isArray(contact.messages) ? contact.messages : [];
 
-            // Si los mensajes tienen contact_id, filtramos solo los de este contacto
+
             if (messages.length > 0 && messages[0].contact_id !== undefined) {
                 messages = messages.filter(m => m.contact_id === contact.id);
             }
@@ -31,14 +30,13 @@ const ContactsContextProvider = ({ children }) => {
             prevContacts.map(contact => {
                 if (contact.id === contactId) {
                     const newMessage = {
-                        // ── FIX: ID único global, no basado en .length ──
-                        // .length causa IDs duplicados entre contactos
+
                         id: Date.now(),
                         text: text,
                         send_by_me: true,
                         created_at: new Date().toISOString(),
                         is_read: true,
-                        contact_id: contactId,  // guardamos a quién pertenece
+                        contact_id: contactId,
                     };
                     return {
                         ...contact,

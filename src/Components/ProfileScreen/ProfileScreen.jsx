@@ -8,7 +8,6 @@ export default function ProfileScreen() {
     const { contacts } = useContext(ContactsContext);
     const navigate = useNavigate();
 
-    // Buscamos al luchador por su ID
     const contact = contacts.find(c => c.id === parseInt(id));
 
     if (!contact) return <div className="profile--error">Contacto no encontrado</div>;

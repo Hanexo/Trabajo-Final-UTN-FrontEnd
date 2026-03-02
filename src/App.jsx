@@ -16,16 +16,16 @@ function App() {
     <ContactsContextProvider>
       <Routes>
 
-        {/* Splash */}
+
         <Route path="/" element={<LoadingScreen />} />
 
-        {/* Login */}
+
         <Route path="/login" element={<LoginScreen />} />
 
-        {/* Perfil del usuario (pantalla completa) */}
+
         <Route path="/profile" element={<UserProfileScreen />} />
 
-        {/* Home con sidebar */}
+
         <Route path="/home" element={<Home />}>
           <Route index element={<WelcomeScreen />} />
           <Route path="chat/:id" element={<ContactScreen />} />

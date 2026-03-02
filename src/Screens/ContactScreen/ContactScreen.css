@@ -641,16 +641,16 @@
         display: flex;
     }
 
-    /* En móvil el botón "Llamar" ocupa demasiado espacio, se oculta el texto */
+
     .cs--hdr__call--btn {
         padding: 7px 10px;
         font-size: 0;
-        /* oculta el texto "Llamar" */
+
         gap: 0;
     }
 
     .cs--hdr__call--btn svg:last-child {
         display: none;
-        /* oculta el chevron */
+
     }
 }
