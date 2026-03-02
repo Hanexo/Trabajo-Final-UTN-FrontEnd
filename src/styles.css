@@ -12,8 +12,6 @@ body,
     height: 100%;
 }
 
-
-
 :root {
     --color--primario-900: #111B21;
     --color--primario-800: #00634D;
@@ -24,12 +22,150 @@ body,
     --color--primario-200: #F6F5F4;
     --color--primario-100: #FFFFFF;
 
-
     --color--secundario-300: #8696a0;
     --color--secundario-200: #626262;
 
-    /* Color (Filter Tab */
-
     --color--Filter--tab: #666B7A;
+}
+
+@media screen and (max-width: 1000px) {
+    .filter--tabs {
+        gap: 8px;
+        padding: 3px 6px 5px;
+    }
+
+    .filter--tab {
+        gap: 4px;
+        font-size: 12px;
+        padding: 3.3px 6.2px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .wa--topbar__welcome {
+        display: none;
+    }
+
+    .wa--topbar__name {
+        display: none;
+    }
+
+    .filter--tabs {
+        gap: 8px;
+        padding: 3px 6px 5px;
+    }
+
+    .filter--tab {
+        gap: 4px;
+        font-size: 12px;
+        padding: 3.3px 6.2px;
+    }
+
+    .nav--sidebar {
+        min-width: 40px;
+        width: 40px;
+    }
+
+    .nav--btn__avatar {
+        width: 33px;
+        height: 33px;
+    }
+
+    .sidebar--container {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cs--hdr__call--btn {
+        padding: 5px 10px;
+        font-size: 12px;
+        gap: 4px;
+        border-radius: 15px;
+    }
+
+    .cs--hdr__icon--btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .cs--hdr__icon--btn svg,
+    .cs--hdr__call--btn svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .cs--header__actions {
+        gap: 2px;
+    }
+
+    .profile--img__large {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+
+    .main--layout:not(.chat--is-open) .chat--view {
+        display: none;
+    }
+
+    .main--layout:not(.chat--is-open) .sidebar {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .main--layout:not(.chat--is-open) .sidebar--container {
+        max-width: 100%;
+    }
+
+    /* Con chat: ocultar sidebar, chat llena todo */
+    .main--layout.chat--is-open .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .ups--panel {
+        min-width: 100%;
+        min-height: 100%;
+        border-right: none;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .cs--header {
+        padding: 0px;
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 410px) {
+    .cs--hdr__call--btn {
+        display: none;
+    }
+
+    .nav--sidebar {
+        min-width: 28px;
+        width: 28px;
+    }
+
+    .nav--avatar__placeholder {
+        width: 23px;
+        height: 23px;
+    }
+
+    .nav--btn {
+        font-size: 15px;
+    }
+
 
 }

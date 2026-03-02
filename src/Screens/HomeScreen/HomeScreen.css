@@ -1,4 +1,6 @@
-/* Layout */
+/* ═══════════════════════════════════
+   LAYOUT PRINCIPAL
+   ═══════════════════════════════════ */
 .main--layout {
     display: flex;
     width: 100%;
@@ -8,17 +10,33 @@
     padding: 0;
 }
 
-/* Sidebar */
+/* ═══════════════════════════════════
+   PANEL SIDEBAR
+   ═══════════════════════════════════ */
+.sidebar--panel {
+    display: flex;
+    flex-shrink: 0;
+    height: 100%;
+    width: calc(35% + 62px);
+    min-width: calc(280px + 62px);
+    max-width: calc(560px + 62px);
+}
+
+/* En móvil sin chat: ocupa todo el ancho */
+.sidebar--panel__full {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+}
+
 .sidebar {
-    width: 35%;
-    min-width: 280px;
-    max-width: 560px;
+    flex: 1;
+    min-width: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
     border-right: 1px solid #e9edef;
     overflow: hidden;
-    flex-shrink: 0;
 }
 
 .sidebar--content {
@@ -28,7 +46,9 @@
     height: 100%;
 }
 
-/* Chat */
+/* ═══════════════════════════════════
+   CHAT VIEW
+   ═══════════════════════════════════ */
 .chat--view {
     flex: 1;
     min-width: 0;
@@ -38,7 +58,9 @@
     overflow: hidden;
 }
 
-/* Topbar */
+/* ═══════════════════════════════════
+   TOPBAR
+   ═══════════════════════════════════ */
 .wa--topbar {
     display: flex;
     align-items: center;

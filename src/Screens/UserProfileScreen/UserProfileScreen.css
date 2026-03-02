@@ -1,0 +1,181 @@
+.ups--layout {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: var(--color--primario-200)
+}
+
+.ups--panel {
+    width: 570px;
+    min-width: 570px;
+    height: 100%;
+    background: var(--color--primario-100);
+    border-right: 1px solid #e9edef;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.ups--panel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header */
+.ups--panel__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 20px 16px;
+    background: var(--color--primario-800);
+    color: white;
+}
+
+.ups--back__btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background 0.15s;
+}
+
+.ups--back__btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.ups--panel__title {
+    font-size: 19px;
+    font-weight: 500;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Avatar */
+.ups--avatar__section {
+    display: flex;
+    justify-content: center;
+    padding: 36px 0 28px;
+}
+
+.ups--avatar__wrap {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+.ups--avatar__placeholder {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--color--primario-800);
+    color: #fff;
+    font-size: 64px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+}
+
+.ups--avatar__edit {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--color--primario-800);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.15s;
+}
+
+.ups--avatar__edit:hover {
+    background: var(--color--primario-650);
+}
+
+/* Campos */
+.ups--field {
+    padding: 12px 24px 14px;
+    border-bottom: 1px solid var(--color--primario-200)
+}
+
+.ups--field__label {
+    font-size: 13px;
+    color: var(--color--secundario-800);
+    font-family: 'Segoe UI', sans-serif;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.ups--field__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ups--field__phone-icon {
+    font-size: 16px;
+    color: var(--color--secundario-300);
+}
+
+.ups--field__value {
+    flex: 1;
+    font-size: 17px;
+    color: var(--color--primario-900);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.ups--field__edit {
+    background: none;
+    border: none;
+    color: #54656f;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+
+.ups--field__edit:hover {
+    background: var(--color--primario-200);
+    color: var(--color--primario-900);
+}
+
+/* ── PANEL DERECHO ── */
+.ups--right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color--primario-200);
+}
+
+.ups--right__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.ups--right__placeholder p {
+    font-size: 22px;
+    color: #aaa;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}

@@ -18,8 +18,10 @@ export default function Home() {
     }
   }, [location.state?.nombreUsuario]);
 
+  const isChatOpen = /\/(chat|profile)\/\d+/.test(location.pathname);
+
   return (
-    <div className="main--layout">
+    <div className={`main--layout${isChatOpen ? ' chat--is-open' : ''}`}>
 
       <NavSidebar />
 

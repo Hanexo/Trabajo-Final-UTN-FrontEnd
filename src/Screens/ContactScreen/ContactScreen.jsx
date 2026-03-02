@@ -1,19 +1,19 @@
 import { useContext, useState, useRef, useEffect } from 'react';
-import { useParams, Link } from 'react-router'; // Link es fundamental para navegar
+import { useParams, Link, useNavigate } from 'react-router';
 import { ContactsContext } from '../../ContactsContext/ContactsContext';
 import './ContactScreen.css';
 
 export default function ContactScreen() {
     const { id } = useParams();
-    const { contacts, sendMessage } = useContext(ContactsContext);
+    const { contacts, sendMessage, markAsRead } = useContext(ContactsContext);
     const [inputValue, setInputValue] = useState("");
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
+    const navigate = useNavigate();
 
     const contactId = parseInt(id);
     const contact = contacts.find(c => c.id === contactId);
 
-    // Filtrado de mensajes por contacto activo
     const contactMessages = (() => {
         if (!contact) return [];
         const msgs = Array.isArray(contact.messages) ? contact.messages : [];
@@ -29,7 +29,7 @@ export default function ContactScreen() {
 
     useEffect(() => {
         setInputValue("");
-        // Aquí borramos la línea que decía setShowProfile(false) porque ya no existe ese estado
+        markAsRead(contactId);
     }, [id]);
 
     const handleSend = (e) => {
@@ -66,9 +66,20 @@ export default function ContactScreen() {
 
     return (
         <div className="cs--root">
-            {/* ════════ HEADER (Actualizado con Link) ════════ */}
+
             <header className="cs--header">
-                {/* Envolvemos la identidad en un Link hacia la nueva página de perfil */}
+                {/* Botón Back — solo visible en móvil (≤670px) */}
+                <button
+                    className="cs--hdr__back--btn"
+                    onClick={() => navigate('/home')}
+                    title="Volver"
+                    aria-label="Volver a chats"
+                >
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                    </svg>
+                </button>
+
                 <Link
                     to={`/home/profile/${contact.id}`}
                     className="cs--header__identity"
@@ -94,7 +105,6 @@ export default function ContactScreen() {
                 </Link>
 
                 <div className="cs--header__actions">
-                    {/* Botón Llamar con ícono de video y flecha */}
                     <button className="cs--hdr__call--btn">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
                             <path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z" />
@@ -105,14 +115,12 @@ export default function ContactScreen() {
                         </svg>
                     </button>
 
-                    {/* Lupa */}
                     <button className="cs--hdr__icon--btn" title="Buscar">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
                             <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                         </svg>
                     </button>
 
-                    {/* Tres puntos */}
                     <button className="cs--hdr__icon--btn" title="Más opciones">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="25" height="25">
                             <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
@@ -121,7 +129,6 @@ export default function ContactScreen() {
                 </div>
             </header>
 
-            {/* ════════ MENSAJES ════════ */}
             <div className="cs--messages">
                 <div className="cs--date__chip"><span>Hoy</span></div>
 
@@ -149,7 +156,6 @@ export default function ContactScreen() {
                 <div ref={messagesEndRef} />
             </div>
 
-            {/* ════════ INPUT ════════ */}
             <footer className="cs--footer">
                 <div className="cs--input__wrap">
                     <textarea
@@ -170,7 +176,6 @@ export default function ContactScreen() {
                 </button>
             </footer>
 
-            {/* AQUÍ YA NO ESTÁ EL CÓDIGO DEL MODAL QUE CAUSABA ERROR */}
         </div>
     );
 }
