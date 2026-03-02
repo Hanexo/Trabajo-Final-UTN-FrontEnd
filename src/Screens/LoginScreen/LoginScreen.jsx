@@ -5,18 +5,25 @@ import './LoginScreen.css';
 export default function LoginScreen() {
     const [usuario, setUsuario] = useState('');
     const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({ usuario: '', password: '' });
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const newErrors = { usuario: '', password: '' };
 
-        if (usuario.trim() === '' || password.trim() === '') {
-            alert("Por favor, rellena todos los campos sin usar solo espacios.");
-            return;
+        if (usuario.trim() === '') {
+            newErrors.usuario = 'El nombre de usuario no puede estar vacío.';
         }
 
-        if (password.length < 6) {
-            alert("La contraseña debe tener al menos 6 caracteres.");
+        if (password.trim() === '') {
+            newErrors.password = 'La contraseña no puede estar vacía.';
+        } else if (password.length < 6) {
+            newErrors.password = 'La contraseña debe tener al menos 6 caracteres.';
+        }
+
+        if (newErrors.usuario || newErrors.password) {
+            setErrors(newErrors);
             return;
         }
 
@@ -66,22 +73,43 @@ export default function LoginScreen() {
             </p>
 
             <form className="login--form" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Nombre de usuario"
-                    className="login--input"
-                    value={usuario}
-                    onChange={(e) => setUsuario(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Contraseña"
-                    className="login--input"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
+
+                <div className="login--field">
+                    <input
+                        type="text"
+                        placeholder="Nombre de usuario"
+                        className={`login--input ${errors.usuario ? 'login--input--error' : ''}`}
+                        value={usuario}
+                        onChange={(e) => {
+                            setUsuario(e.target.value);
+                            if (errors.usuario) setErrors(p => ({ ...p, usuario: '' }));
+                        }}
+                    />
+                    {errors.usuario && (
+                        <span className="login--error">
+                            <i className="bi bi-exclamation-circle"></i> {errors.usuario}
+                        </span>
+                    )}
+                </div>
+
+                <div className="login--field">
+                    <input
+                        type="password"
+                        placeholder="Contraseña"
+                        className={`login--input ${errors.password ? 'login--input--error' : ''}`}
+                        value={password}
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                            if (errors.password) setErrors(p => ({ ...p, password: '' }));
+                        }}
+                    />
+                    {errors.password && (
+                        <span className="login--error">
+                            <i className="bi bi-exclamation-circle"></i> {errors.password}
+                        </span>
+                    )}
+                </div>
+
                 <button type="submit" className="login--btn">INICIAR SESIÓN</button>
             </form>
 

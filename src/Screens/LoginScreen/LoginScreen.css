@@ -127,3 +127,25 @@
         transform: translateY(0);
     }
 }
+
+/* ── Errores inline ── */
+.login--field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.login--input--error {
+    border-color: #e53935 !important;
+}
+
+.login--error {
+    font-size: 12.5px;
+    color: #e53935;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 4px;
+    animation: fadeUp 0.2s ease both;
+}
