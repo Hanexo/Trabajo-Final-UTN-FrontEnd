@@ -53,6 +53,7 @@
 }
 
 /* Header */
+
 .cs--header {
     display: flex;
     align-items: center;
@@ -170,9 +171,8 @@
     background: #e9edef;
 }
 
-/* ═══════════════════
-   ÁREA DE MENSAJES
-   ═══════════════════ */
+/* Área de Mensajes */
+
 .cs--messages {
     flex: 1;
     overflow-y: auto;
@@ -260,6 +260,7 @@
 }
 
 /* Cola estilo WhatsApp */
+
 .cs--bubble__tail--me::after {
     content: '';
     position: absolute;
@@ -288,7 +289,6 @@
     line-height: 1.45;
     margin: 0;
     padding-right: 6px;
-    /* espacio para el timestamp */
 }
 
 .cs--bubble__foot {
@@ -316,9 +316,8 @@
     letter-spacing: -3px;
 }
 
-/* ═══════════════════
-   FOOTER / INPUT
-   ═══════════════════ */
+/* Footer */
+
 .cs--footer {
     display: flex;
     align-items: center;
@@ -389,7 +388,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color--primario-650);
+    background: var(--color--primario-800);
     color: #fff;
     transition: background 0.2s, transform 0.15s;
 }

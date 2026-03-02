@@ -172,10 +172,13 @@ export default function ContactScreen() {
                     className={`cs--send__btn ${inputValue.trim() ? 'cs--send__btn--on' : ''}`}
                     onClick={handleSendClick}
                 >
-                    {inputValue.trim() ? "➤" : "🎤"}
+                    {inputValue.trim()
+                        ? <i className="bi bi-send-fill"></i>  /* Icono de enviar */
+                        : <i className="bi bi-mic-fill"></i>   /* Icono de micrófono (WhatsApp style) */
+                    }
                 </button>
             </footer>
 
-        </div>
+        </div >
     );
 }

@@ -235,11 +235,11 @@ export default function ContactSidebar() {
                                     className="profile--action__btn primary"
                                     onClick={closeProfile}
                                 >
-                                    <span><i class="bi bi-chat-dots-fill"></i>
+                                    <span><i className="bi bi-chat-dots-fill"></i>
                                     </span> Mensaje
                                 </Link>
                                 <button className="profile--action__btn secondary">
-                                    <span><i class="bi bi-telephone-inbound"></i>
+                                    <span><i className="bi bi-telephone-inbound"></i>
                                     </span> Llamar
                                 </button>
                                 <button className="profile--action__btn secondary">
@@ -248,7 +248,7 @@ export default function ContactSidebar() {
                             </div>
 
                             <button className="profile--block__btn">
-                                <i class="bi bi-ban"></i> Bloquear a {profileContact.name}
+                                <i className="bi bi-ban"></i> Bloquear a {profileContact.name}
                             </button>
                         </div>
                     </div>
